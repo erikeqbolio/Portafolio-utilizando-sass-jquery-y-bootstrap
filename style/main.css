@@ -14,7 +14,7 @@ p {
   color: #494949;
 }
 
-.tSlow, .rombo, .diamante, .servicio-img, button, input, select, option, textarea, .social-networks li i, .social-networks li, .copy a, .tumblr, nav ul li a::after, nav ul li a::before, nav ul li a, nav ul .link-active a::after, nav ul, nav .logo img, nav, a {
+.tSlow, .rombo, .diamante, .servicio-img, button, input, select, option, textarea, .social-networks li i, .social-networks li, .copy a, .tumblr, .grid-item::before, .grid-item, nav ul li a::after, nav ul li a::before, nav ul li a, nav ul .link-active a::after, nav ul, nav .logo img, nav, a {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -49,7 +49,7 @@ nav {
 nav:hover {
   background-color: white;
   padding: 25px 0px;
-  border: 1px solid rgba(6, 10, 15, 0.1);
+  border-bottom: 1px solid rgba(6, 10, 15, 0.1);
 }
 nav:hover .logo {
   font-size: 14px;
@@ -124,12 +124,28 @@ nav ul li a:hover::after {
   background-color: #060a0f;
 }
 
+.nav-overlay {
+  background-color: white;
+  border-bottom: 1px solid rgba(6, 10, 15, 0.1);
+  padding: 25px 0px;
+}
+.nav-overlay .logo img {
+  width: 8%;
+}
+.nav-overlay ul {
+  margin-top: 8px;
+}
+.nav-overlay ul li a {
+  color: rgba(73, 73, 73, 0.5);
+}
+
 #slider {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%);
   -o-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%);
+  height: 800px;
 }
 
 #slippry {
@@ -165,6 +181,61 @@ nav ul li a:hover::after {
 }
 #slippry .top_450 {
   top: 450px;
+}
+#slippry img {
+  height: 900px;
+}
+
+.grid {
+  width: 100%;
+  padding: 150px 0px;
+}
+.grid::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.grid-item {
+  width: 20%;
+  padding-bottom: 20%;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  background-color: white;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  -o-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  cursor: pointer;
+  margin-top: -9%;
+}
+.grid-item::before {
+  content: "";
+  position: absolute;
+  background: transparent;
+  background-image: none;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.grid-item:nth-child(6), .grid-item:nth-child(15) {
+  margin-left: 10%;
+}
+.grid-item a img {
+  width: 100%;
+  height: auto;
+}
+.grid-item:hover::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 102, 0, 0.9);
+  background-image: url("../scr/images/mas-recursos/cross.png");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
 }
 
 footer {
@@ -341,5 +412,5 @@ button:hover {
   background-size: 100%;
   background-position: center center;
   background-repeat: no-repeat;
-  z-index: 200;
+  z-index: 50;
 }

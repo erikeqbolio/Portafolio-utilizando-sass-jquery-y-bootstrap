@@ -48,7 +48,7 @@ nav
     &:hover
         background-color: white
         padding: 25px 0px
-        border: 1px solid transparentize($base, .9)
+        border-bottom: 1px solid transparentize($base, .9)
         .logo
             img
                 width: 8%
@@ -114,7 +114,18 @@ nav
                     &::after
                         width: 100%
                         background-color: $base
-                        
+.nav-overlay
+    background-color: white
+    border-bottom: 1px solid transparentize($base, .9)
+    padding: 25px 0px
+    .logo
+        img
+            width: 8%
+    ul
+        margin-top: 8px
+        li
+            a
+                color: $text
 
 
 
@@ -125,6 +136,7 @@ nav
     -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%)
     -o-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%)
     clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%)
+    height: 800px
 #slippry
     position: relative
     h1,h2,h3,h4,h5,h6,p,a,button
@@ -148,6 +160,61 @@ nav
         top: 400px
     .top_450
         top: 450px
+    img
+        height: 900px
+/////////////////////////////
+//grid//reja
+.grid
+    width: 100%
+    padding: 150px 0px
+    &::after
+        content: ''
+        display: block
+        clear: both
+.grid-item
+    width: 20%
+    padding-bottom: 20%
+    overflow: hidden
+    float: left
+    position: relative
+    background-color: white
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+    -o-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+    cursor: pointer
+    margin-top: -9%
+    @extend .tSlow
+    &::before
+        content: ''
+        position: absolute
+        background: transparent
+        background-image: none
+        background-position: center center
+        width: 100%
+        height: 100%
+        pointer-events: none   
+        @extend .tSlow   
+    &:nth-child(6), &:nth-child(15)
+        margin-left: 10%
+    a
+        img
+            width: 100%
+            height: auto
+    &:hover
+        &::before
+            content: ''
+            position: absolute
+            background-color: transparentize($outline, .1)
+            background-image: url("../scr/images/mas-recursos/cross.png")
+            background-repeat: no-repeat
+            background-size: 30%
+            background-position: center center
+            width: 100%
+            height: 100%
+        
+        
+
+
 /////////////////////////////    
 //footer
 footer
@@ -309,7 +376,7 @@ button
     background-position: center center
     background-repeat: no-repeat
     @extend .rombo
-    z-index: 200
+    z-index: 50
 
 
 /////////////////////////////    
